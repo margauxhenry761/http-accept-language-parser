@@ -1,0 +1,14 @@
+[project]
+name = "http-accept-language-parser"
+version = "0.1.0"
+description = "Parses Accept-Language headers into weighted language tags, handling q-values, wildcards, and malformed entries."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
