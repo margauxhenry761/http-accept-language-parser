@@ -25,3 +25,10 @@ Real-world `Accept-Language` headers are messy: browsers emit q-values greater t
 - Malformed tokens are silently skipped, not raised — a single garbage entry does not invalidate the rest of the header. This mirrors browser behaviour but means you cannot detect that a token was rejected; if you need that, this is not the right library.
 - q-values outside `[0.0, 1.0]` are clamped, not rejected.
 - Tags are **not** deduplicated or sorted by q. If a caller needs the RFC's precedence ordering, sort the returned list yourself.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
