@@ -1,6 +1,6 @@
 [project]
 name = "http-accept-language-parser"
-version = "0.1.0"
+version = "0.1.1"
 description = "Parses Accept-Language headers into weighted language tags, handling q-values, wildcards, and malformed entries."
 requires-python = ">=3.10"
 dependencies = []
